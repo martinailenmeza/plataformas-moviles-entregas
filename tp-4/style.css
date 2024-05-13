@@ -1,0 +1,86 @@
+
+*{margin: 0; padding: 0;}
+body {margin: 1rem; background-color: #012; color: #e6e8ff; font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;}
+article {margin: 0 auto}
+a {color: #A06CD5}
+a:visited {color: #E2CFEA}
+p {margin: 1rem 0;}
+figure {text-align: center;}
+img {display: block; max-width: 100%; height: auto; margin: 0 auto; border-radius: 10px;}
+/* Define una media query que cambie el color de fondo del body a rgb(40,60,80) cuando la pantalla tenga más de 400px de ancho */
+@media (min-width: 400px) {
+    body {
+        background-color: rgb(40, 60, 80);
+    }
+}
+
+/* Define una media query que centre el título h1 cuando la pantalla tenga menos de 800px de ancho */
+@media (max-width: 800px) {
+    h1 {
+        text-align: center;
+    }
+}
+
+/* Define una media query para que el ancho máximo (max-width) del article sea 50ch cuando el dispositivo tiene una pantalla orientada en horizontal (más espacio de ancho que de alto) */
+@media  (orientation: landscape) {
+    article {
+        max-width: 50ch;
+    }
+}
+
+
+/* Define una media query para que cambie el color de fondo del título principal h1 cuando el alto de la pantalla sea como mínimo 200px */
+@media (min-height: 200px) {
+    h1 {
+        background-color: #333; /* Cambia este color según sea necesario */
+    }
+}
+
+/* Define una media query para cambiar el estilo del texto de todos los párrafos para que muestren una fuente font-family: serif; cuando la página se imprime (en papel) */
+@media print {
+    p {
+        font-family: serif;
+    }
+}
+
+/* Si el usuario prefiere un estilo de colores claros */
+@media (prefers-color-scheme: light) {
+    body, h1 {
+        color: #111;
+        background-color: #DDD;
+    }
+}
+
+/* Si el dispositivo del usuario es una pantalla y además no soporta la acción hover */
+@media (hover: none) and (pointer: coarse) {
+    a {
+        background-color: #212;
+        padding: 2px 5px;
+    }
+}
+
+
+/* Si el dispositivo es una pantalla, y tiene 800px o más de ancho, pero menos de 900px, la imagen no se tiene que mostrar */
+
+@media (min-width: 800px) and (max-width: 899px) {
+    img {
+        display: none;
+    }
+}
+
+
+/* Si el dispositivo es una pantalla, y tiene entre 200px y 400px de ancho, mostrar la imagen con un alto de 400px, y con el siguiente estilo: object-fit: cover; */
+@media (min-width: 200px) and (max-width: 400px) {
+    img {
+        height: 400px;
+        object-fit: cover;
+    }
+}
+
+/* Define una query para que el color de fondo del elemento article cambie a #667 cuando el Device Pixel Ratio de la pantalla del dispositivo sea mayor a 2. Ayuda: media query resolution, con una unidad expresada en dppx. */
+@media (min-resolution: 2dppx) {
+    article {
+        background-color: #667;
+    }
+}
+
